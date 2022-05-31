@@ -1,0 +1,114 @@
+$columnas: 12;
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 720px !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 960px !important;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px !important;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px !important;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+[class*="col-"] {
+    float: left;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@for $numero from 1 to $columnas {
+    .col-#{$numero} {
+        flex-basis: $numero / $columnas * 100%;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    @for $numero from 1 to $columnas {
+        .col-sm-#{$numero} {
+            flex-basis: $numero / $columnas * 100%;
+        }
+    }
+
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    @for $numero from 1 to $columnas {
+        .col-md-#{$numero} {
+            flex-basis: $numero / $columnas * 100%;
+        }
+    }
+
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    @for $numero from 1 to $columnas {
+        .col-lg-#{$numero} {
+            flex-basis: $numero / $columnas * 100%;
+        }
+    }
+
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    @for $numero from 1 to $columnas {
+        .col-xl-#{$numero} {
+            flex-basis: $numero / $columnas * 100%;
+        }
+    }
+
+    .container {
+        max-width: 1140px;
+    }
+}

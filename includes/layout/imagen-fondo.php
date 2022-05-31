@@ -1,0 +1,1 @@
+<div class="section bg-img" style="background-image: url(<?= $field[ 's1_imagen_fondo' ] ?>)"></div>

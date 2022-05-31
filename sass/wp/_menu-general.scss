@@ -1,0 +1,222 @@
+a#site-title {
+    color: #000;
+    font-weight: 600;
+}
+
+a.menu-item {
+    color: #000;
+    
+    &:not(.wpml-ls-item) {
+        padding-right: 40px;
+    }
+}
+
+.wpml-ls-legacy-list-horizontal {
+    display: inline-flex !important;
+    flex-flow: row nowrap;
+    border: none !important;
+    padding: 0 !important;
+    clear: both !important;
+
+    ul {
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style-type: none !important;
+
+        li {
+            display: inline-block !important;
+            margin: 0 !important;
+            list-style-type: none !important;
+
+            &.wpml-ls-first-item::after {
+                content: "|";
+                margin-right: 5px;
+            }
+
+            a {
+                display: inline-flex !important;
+                flex-flow: row nowrap;
+                text-decoration: none !important;
+                padding: 0 !important;
+                line-height: initial !important;
+                color: #000 !important;
+
+                span {
+                    position: relative;
+                    display: inline-block;
+                    margin: 0 auto;
+                    padding: 0;
+                    vertical-align: initial !important;
+                    transition: all 0.3s ease-in-out;
+            
+                    &:before, &:after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -5px;
+                        width: 0px;
+                        height: 2px;
+                        transition: all 0.3s ease-in-out;
+                        opacity: 0;
+                        background-color: #000;
+                    }
+                }
+            
+                &:hover {
+                    span {
+                        &:before,
+                        &:after {
+                            width: 100%;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+div.tabcontent {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    a {
+        font-size: 1.5rem;
+        color: #000;
+
+        &.panel-link:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        span {
+            padding-top: 8px !important;
+        }
+    }
+
+    button.accordion {
+        margin-top: 20px;
+        border: none;
+        background: transparent;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: none !important;
+        }
+
+        h2 {
+            font-weight: 100;
+            padding-right: 15px;
+        }
+
+        svg {
+            transform: rotate(180deg);
+            transition: all 0.3s;
+        }
+    }
+
+    img.arrow-up {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        height: 20px;
+        width: 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    img.arrow-down {
+        margin-left: 5px;
+        height: 15px;
+    }
+}
+
+.bg-display {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.menu-display {
+    left: 0 !important;
+}
+
+.menu-visibility {
+    opacity: 1 !important;
+}
+
+.panel {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-item-effect, .hover-active {
+    flex-flow: row nowrap;
+
+    .hover {
+        margin: 0 auto;
+        padding: 0;
+        transition: all 0.3s ease-in-out;
+
+        &.hover-item {
+            &:before,
+            &:after {
+                left: 0;
+            }
+        }  
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.menu-item-effect {
+    .hover {
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            width: 0px;
+            height: 2px;
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            background-color: #000;
+        }
+    }
+
+    &:hover {      
+        .hover {
+            &:before,
+            &:after {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.hover-active {
+    .hover {
+        &:before,
+        &:after {
+            width: 100%;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+        }   
+    }
+}
+
+@media screen and (max-width: 991px) {
+    img.arrow-up, img.arrow-down {
+        height: 11px !important;
+    }
+}

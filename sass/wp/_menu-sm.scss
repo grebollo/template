@@ -1,0 +1,74 @@
+div#header-sm-left, div#header-sm-right {
+    z-index: 1;
+    top: 0;
+    padding: 15px 20px;
+}
+
+div#header-sm-left {
+    width: 20%;
+}
+
+div#header-sm-right {
+    width: 60%;
+    margin-left: 40%;
+}
+
+div#sm-menu {
+    left: -100%;
+    z-index: 2;
+    background-color: #eeecda;
+    transition: left 0.5s ease-in-out;
+    overflow: overlay;
+
+    div#sm-menu-heading {
+        padding: 15px 20px;
+        background-color: #eeecda;
+        opacity: 0;
+        z-index: 1;
+
+        a.menu-item:not(.wpml-ls-item) {
+            padding-right: 30px;
+        }
+
+        svg.close-menu {
+            opacity: 0;
+            height: 16px;
+            width: 16px;
+            right: 0;
+            margin-right: 20px;
+            transition: opacity 0.3s ease-in-out;
+        
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    div#sm-tabs-container {
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 100px;
+
+        div.menu-project-sm {
+            margin-top: 15px;
+            margin-bottom: 40px;
+
+            a {
+                margin-top: 10px;
+            }
+        }
+
+        div.tabcontent.menu-info {
+            padding-top: 100px;
+        }
+    }
+}
+
+@media screen and (max-width: 365px) {
+    div#sm-menu-heading {
+        a.menu-item:not(.wpml-ls-item) {
+            padding-right: 20px !important;
+        }
+    }
+}

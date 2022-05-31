@@ -1,0 +1,166 @@
+/** Login */
+body.login{
+    background-color: transparent;
+    font-family: $font-stack;
+    padding-top:100px;
+    box-sizing: border-box;
+
+    div#login{
+        background-color: rgba(241, 241, 241, .85);
+        padding: 40px 30px;
+        --webkit-box-shadow: -3px 7px 35px 1px rgba(0, 0, 0, .8);
+        box-shadow: -3px 7px 35px 1px rgba(0, 0, 0, .8);
+
+        form#loginform{
+            float: right;
+            padding: 26px 24px 30px;
+
+            p{
+                color: #292927;
+            }
+
+            label{
+                color: #292927;
+            }
+
+            input{
+                background: $color-blanco;
+                border: 1px solid $marron;
+            }
+
+            p.submit input#wp-submit{
+                background-color: $marron;
+                border: none;
+                text-transform: uppercase;
+                padding: 5px 40px;
+                height: auto;
+                box-shadow: none;
+                text-shadow: none;
+                font-weight: bold;
+                
+                &:focus{
+                    box-shadow: none;   
+                }
+
+            }
+           
+        }
+
+        form#lostpasswordform{
+            float: right;
+            margin-top: 105px;
+            margin-bottom: 25px;
+        }
+
+        h1{         
+            a{
+                background-image: url(../img/logo.png);
+                background-size: 80%;
+                height: 100px;
+                width: $ancho-100;
+                margin:0;
+            }
+        }
+
+        p.forgetmenot{
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        p#nav{
+            text-align: center;
+            a{
+                color: $marron;
+            }
+        }
+
+        p#backtoblog{
+            text-align: center;
+            a{
+                color: $marron;
+            }
+        }
+    }
+}
+
+#login_error, p.message{
+    position: absolute;
+    width: $ancho-100;
+    top:0;
+    left:0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+@media screen and (min-width:768px){
+    body.login div#login{
+        position: absolute;
+        top:0;
+        left:0;
+        right: 0;
+        bottom: 0;
+        width: 700px;
+        height: 330px;
+        margin: auto;
+    }
+
+    body.login div#login h1{
+        display: inline-block;
+        margin-top: 100px;
+        width: 50%
+    }
+
+    body.login div#login p#nav, body.login div#login p#backtoblog{
+        display: inline;
+    }
+
+    body.login div#login p#backtoblog {
+        float: right;
+        margin:0; 
+    }
+}
+
+.grupo{
+   margin-bottom: 20px;
+   &::after{
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+   } 
+}
+
+@media screen and (min-width: 768px) and (max-width: 782px) {
+    .login form {
+        margin-top: 0px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body.login div#login form#loginform {
+        width: 300px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    form#lostpasswordform{
+        margin-top: 25px !important;
+    }
+
+    body.login div#login form#loginform p.submit input#wp-submit {
+        padding: 10px 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .login #login_error, p.message {
+        position: fixed;
+    }
+    
+    p.message {
+        top: 0;
+        left: 0;
+        width: $ancho-100;
+    }
+}
